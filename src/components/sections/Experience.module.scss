@@ -1,0 +1,263 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.timelineContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-left: 2.5rem;
+
+  @include mobile {
+    padding-left: 1.5rem;
+    gap: 2rem;
+  }
+}
+
+.timelineTrack {
+  position: absolute;
+  top: 15px;
+  bottom: 20px;
+  left: 14px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    $color-accent 0%,
+    rgba(166, 184, 255, 0.3) 50%,
+    rgba(183, 247, 212, 0.1) 100%
+  );
+
+  @include mobile {
+    left: 7px;
+  }
+}
+
+.timelineItem {
+  position: relative;
+}
+
+.timelineMarker {
+  position: absolute;
+  top: 1.5rem;
+  left: -2.5rem;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  @include mobile {
+    left: -1.5rem;
+  }
+}
+
+.markerInner {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: $color-surface-2;
+  border: 2px solid $color-accent;
+  color: $color-accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(166, 184, 255, 0.4);
+
+  @include mobile {
+    width: 26px;
+    height: 26px;
+
+    svg {
+      width: 13px;
+      height: 13px;
+    }
+  }
+}
+
+.experienceCard {
+  background: $color-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  padding: 2.25rem;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $color-border-hover;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(166, 184, 255, 0.08);
+  }
+
+  @include mobile {
+    padding: 1.5rem;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(242, 240, 233, 0.06);
+
+  @include tablet {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.roleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.roleTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.roleTitle {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: $color-light;
+  letter-spacing: -0.02em;
+}
+
+.roleBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: $radius-full;
+  background: $color-mint-dim;
+  border: 1px solid rgba(183, 247, 212, 0.25);
+  color: $color-mint;
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.companyRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.companyName {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $color-accent;
+}
+
+.clientTag {
+  font-size: 0.88rem;
+  color: $color-light-dim;
+  background: rgba(242, 240, 233, 0.04);
+  padding: 0.25rem 0.65rem;
+  border-radius: $radius-sm;
+
+  strong {
+    color: $color-light;
+  }
+}
+
+.metaInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+
+  @include tablet {
+    align-items: flex-start;
+  }
+}
+
+.periodBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: $radius-full;
+  background: rgba(242, 240, 233, 0.05);
+  border: 1px solid rgba(242, 240, 233, 0.1);
+  color: $color-light;
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.locationTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  color: $color-muted;
+}
+
+.summaryText {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: $color-light-dim;
+  margin-bottom: 1.5rem;
+}
+
+.achievementsBlock {
+  margin-bottom: 1.75rem;
+}
+
+.achievementsHeading {
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: $color-muted;
+  margin-bottom: 0.85rem;
+}
+
+.achievementsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.achievementItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: $color-light-dim;
+  line-height: 1.6;
+}
+
+.checkIcon {
+  color: $color-mint;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.skillsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skillPill {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: $radius-sm;
+  background: $color-surface-2;
+  border: 1px solid rgba(242, 240, 233, 0.06);
+  color: $color-muted;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $color-accent;
+    border-color: rgba(166, 184, 255, 0.2);
+  }
+}

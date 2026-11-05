@@ -1,0 +1,285 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.tabNav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.tabBtn {
+  background: $color-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $color-border-hover;
+    background: $color-surface-2;
+  }
+}
+
+.tabBtnActive {
+  background: $color-surface-2;
+  border-color: $color-accent;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(166, 184, 255, 0.15);
+
+  .tabIcon {
+    background: $color-accent;
+    color: $color-dark;
+  }
+
+  .tabTitle {
+    color: $color-light;
+  }
+}
+
+.tabIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-md;
+  background: rgba(166, 184, 255, 0.1);
+  color: $color-accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all $transition-fast;
+}
+
+.tabText {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabTitle {
+  font-family: $font-headline;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: $color-light-dim;
+  transition: color $transition-fast;
+}
+
+.tabSub {
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  color: $color-muted;
+}
+
+// Active Panel
+.categoryPanel {
+  background: $color-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  padding: 2.5rem;
+  margin-bottom: 3.5rem;
+
+  @include mobile {
+    padding: 1.5rem;
+  }
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 1.75rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(242, 240, 233, 0.06);
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+.panelTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: $color-light;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.panelTagline {
+  font-size: 0.95rem;
+  color: $color-muted;
+}
+
+.panelCount {
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  color: $color-mint;
+  padding: 0.35rem 0.85rem;
+  border-radius: $radius-full;
+  background: $color-mint-dim;
+  border: 1px solid rgba(183, 247, 212, 0.2);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skillCard {
+  background: $color-surface-2;
+  border: 1px solid rgba(242, 240, 233, 0.05);
+  border-radius: $radius-md;
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $color-border-hover;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.skillCardKey {
+  border-left: 3px solid $color-accent;
+}
+
+.skillCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.skillNameWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.keyStar {
+  color: $color-accent;
+  font-size: 0.85rem;
+}
+
+.skillName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $color-light;
+}
+
+.levelBadge {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: $radius-sm;
+  background: rgba(242, 240, 233, 0.05);
+  color: $color-light-dim;
+  border: 1px solid rgba(242, 240, 233, 0.1);
+}
+
+.level--expert {
+  background: rgba(166, 184, 255, 0.15);
+  border-color: rgba(166, 184, 255, 0.35);
+  color: $color-accent;
+}
+
+.level--advanced {
+  background: rgba(183, 247, 212, 0.1);
+  border-color: rgba(183, 247, 212, 0.3);
+  color: $color-mint;
+}
+
+.level--certified {
+  background: rgba(242, 240, 233, 0.1);
+  border-color: rgba(242, 240, 233, 0.25);
+  color: $color-light;
+}
+
+.skillNote {
+  font-size: 0.85rem;
+  color: $color-muted;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.skillFooter {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+}
+
+.statusLive {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  color: $color-muted;
+}
+
+.checkIcon {
+  color: $color-mint;
+}
+
+// Philosophy Bar
+.techPhilosophyBar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.philosophyItem {
+  background: rgba(22, 24, 27, 0.6);
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: 1.75rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.philosophyNum {
+  font-family: $font-headline;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: $color-accent;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.philosophyTitle {
+  font-family: $font-headline;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $color-light;
+  margin-bottom: 0.35rem;
+}
+
+.philosophyDesc {
+  font-size: 0.85rem;
+  color: $color-muted;
+  line-height: 1.55;
+}

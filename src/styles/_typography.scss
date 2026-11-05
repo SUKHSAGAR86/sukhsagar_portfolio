@@ -1,0 +1,81 @@
+// -------------------------------------------------------------
+// TYPOGRAPHY SYSTEM
+// -------------------------------------------------------------
+@use "variables" as *;
+@use "mixins" as *;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-headline;
+  font-weight: 700;
+  color: $color-light;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+p {
+  color: $color-light-dim;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  @include mono-tag;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $color-accent;
+  padding: 0.35rem 0.85rem;
+  border-radius: $radius-full;
+  background: $color-accent-dim;
+  border: 1px solid rgba(166, 184, 255, 0.2);
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+
+  &--mint {
+    color: $color-mint;
+    background: $color-mint-dim;
+    border-color: rgba(183, 247, 212, 0.25);
+  }
+}
+
+.mono-label {
+  @include mono-tag;
+  color: $color-muted;
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+
+  &__eyebrow {
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    max-width: 640px;
+    font-size: 1.1rem;
+    color: $color-muted;
+  }
+}

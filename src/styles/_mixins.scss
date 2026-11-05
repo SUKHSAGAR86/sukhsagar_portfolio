@@ -1,0 +1,105 @@
+// -------------------------------------------------------------
+// SCSS MIXINS & UTILITIES
+// -------------------------------------------------------------
+@use "variables" as *;
+
+// Responsive Breakpoints
+@mixin mobile {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 993px) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// Glassmorphism Surface
+@mixin glass($bg: $color-surface-glass, $blur: 16px, $border: $color-border) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $border;
+}
+
+// Gradient Text
+@mixin text-gradient($start: $color-light, $end: $color-accent) {
+  background: linear-gradient(135deg, $start 0%, $end 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin text-gradient-dual($start: $color-accent, $end: $color-mint) {
+  background: linear-gradient(90deg, $start 0%, $end 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Flex Center Helper
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Monospace Tag / Label
+@mixin mono-tag {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+// Subtle Hover Lift
+@mixin hover-lift {
+  transition: transform $transition-base, border-color $transition-base, box-shadow $transition-base;
+  
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $color-border-hover;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px $color-accent-dim;
+  }
+}
+
+// Custom Scrollbar
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $color-dark;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $color-surface-3;
+    border-radius: $radius-full;
+    
+    &:hover {
+      background: $color-muted;
+    }
+  }
+}

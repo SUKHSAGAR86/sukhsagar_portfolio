@@ -1,0 +1,261 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 14, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: $z-modal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+
+  @include mobile {
+    padding: 1rem;
+    align-items: flex-end;
+  }
+}
+
+.modalContent {
+  width: 100%;
+  max-width: 780px;
+  max-height: 90vh;
+  background: $color-surface-1;
+  border: 1px solid rgba(166, 184, 255, 0.2);
+  border-radius: $radius-xl;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(166, 184, 255, 0.15);
+
+  @include mobile {
+    max-height: 85vh;
+    border-radius: $radius-lg $radius-lg 0 0;
+  }
+}
+
+.modalHeader {
+  padding: 1.75rem 2rem;
+  background: $color-surface-2;
+  border-bottom: 1px solid $color-border;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.categoryPill {
+  @include mono-tag;
+  color: $color-mint;
+  font-size: 0.72rem;
+  margin-bottom: 0.4rem;
+}
+
+.modalTitle {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: $color-light;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.orgTag {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: $color-accent;
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-sm;
+  background: $color-surface-1;
+  border: 1px solid $color-border;
+  color: $color-muted;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $color-light;
+    border-color: $color-border-hover;
+    background: $color-surface-3;
+  }
+}
+
+.modalBody {
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  @include custom-scrollbar;
+
+  @include mobile {
+    padding: 1.25rem;
+  }
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: $color-surface-2;
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metricBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricLabel {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  color: $color-muted;
+  text-transform: uppercase;
+}
+
+.metricVal {
+  font-family: $font-headline;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $color-accent;
+}
+
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: $color-light;
+}
+
+.descText {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: $color-light-dim;
+}
+
+.deliverablesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.deliverableItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: $color-light-dim;
+}
+
+.bulletDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: $color-accent;
+  flex-shrink: 0;
+  margin-top: 0.55rem;
+}
+
+.securityGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.secItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: $radius-sm;
+  background: rgba(183, 247, 212, 0.05);
+  border: 1px solid rgba(183, 247, 212, 0.15);
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  color: $color-mint;
+}
+
+.secIcon {
+  color: $color-mint;
+  flex-shrink: 0;
+}
+
+.techPillGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techPill {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: $radius-sm;
+  background: $color-surface-2;
+  border: 1px solid $color-border;
+  color: $color-light-dim;
+}
+
+.modalFooter {
+  padding: 1.25rem 2rem;
+  background: $color-surface-2;
+  border-top: 1px solid $color-border;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include mobile {
+    padding: 1rem 1.25rem;
+  }
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  color: $color-mint;
+}
+
+.greenDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $color-mint;
+  box-shadow: 0 0 8px $color-mint;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

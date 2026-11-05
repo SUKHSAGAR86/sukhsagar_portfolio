@@ -1,0 +1,185 @@
+// -------------------------------------------------------------
+// GLOBAL STYLES & APPLICATION CONTAINER
+// -------------------------------------------------------------
+@use "variables" as *;
+@use "mixins" as *;
+@use "reset";
+@use "typography";
+@use "animations";
+
+// Page Container
+.container {
+  width: 100%;
+  max-width: $max-width-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  @include tablet {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.container-wide {
+  width: 100%;
+  max-width: $max-width-wide;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+// Section Base
+.section {
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+  position: relative;
+
+  @include mobile {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+// Global Atmospheric Background
+.atmospheric-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: $z-negative;
+  overflow: hidden;
+
+  &__glow-1 {
+    position: absolute;
+    top: -150px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(166, 184, 255, 0.08) 0%, transparent 70%);
+    filter: blur(80px);
+    border-radius: 50%;
+  }
+
+  &__glow-2 {
+    position: absolute;
+    top: 40%;
+    left: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(183, 247, 212, 0.05) 0%, transparent 70%);
+    filter: blur(100px);
+    border-radius: 50%;
+  }
+
+  &__glow-3 {
+    position: absolute;
+    bottom: -100px;
+    right: 15%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(166, 184, 255, 0.06) 0%, transparent 70%);
+    filter: blur(90px);
+    border-radius: 50%;
+  }
+
+  &__grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(to right, rgba(242, 240, 233, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(242, 240, 233, 0.02) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse at 50% 50%, black 40%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 40%, transparent 80%);
+  }
+}
+
+// Button Design System
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: $font-headline;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 1.65rem;
+  border-radius: $radius-full;
+  transition: all $transition-base;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+
+  &--primary {
+    background: $color-light;
+    color: $color-dark;
+    box-shadow: 0 4px 20px rgba(242, 240, 233, 0.15);
+
+    &:hover {
+      background: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(242, 240, 233, 0.28);
+    }
+  }
+
+  &--accent {
+    background: $color-accent;
+    color: $color-dark;
+    box-shadow: 0 4px 20px rgba(166, 184, 255, 0.25);
+
+    &:hover {
+      background: lighten($color-accent, 6%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(166, 184, 255, 0.45);
+    }
+  }
+
+  &--mint {
+    background: $color-mint;
+    color: $color-dark;
+    box-shadow: 0 4px 20px rgba(183, 247, 212, 0.25);
+
+    &:hover {
+      background: lighten($color-mint, 5%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(183, 247, 212, 0.4);
+    }
+  }
+
+  &--secondary {
+    background: $color-surface-2;
+    color: $color-light;
+    border: 1px solid $color-border;
+
+    &:hover {
+      background: $color-surface-3;
+      border-color: $color-border-hover;
+      transform: translateY(-2px);
+      color: $color-accent;
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $color-light-dim;
+    border: 1px solid transparent;
+
+    &:hover {
+      color: $color-light;
+      background: rgba(242, 240, 233, 0.05);
+      border-color: $color-border;
+    }
+  }
+
+  &--sm {
+    padding: 0.55rem 1.15rem;
+    font-size: 0.85rem;
+  }
+
+  &--lg {
+    padding: 1rem 2.25rem;
+    font-size: 1.05rem;
+  }
+}

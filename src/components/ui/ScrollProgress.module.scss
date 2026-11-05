@@ -1,0 +1,19 @@
+@use "@/styles/variables" as *;
+
+.progressBarWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(242, 240, 233, 0.04);
+  z-index: $z-fixed-nav + 10;
+  pointer-events: none;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, $color-accent 0%, $color-mint 100%);
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px $color-accent-glow;
+}

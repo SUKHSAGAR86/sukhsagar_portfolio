@@ -1,0 +1,411 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.heroSection {
+  min-height: 100vh;
+  padding-top: calc($nav-height + 3rem);
+  padding-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  @include mobile {
+    padding-top: calc($nav-height + 1.5rem);
+    padding-bottom: 2.5rem;
+  }
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+// Left Content
+.heroContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrowWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-mint;
+  box-shadow: 0 0 6px $color-mint;
+  display: inline-block;
+}
+
+.systemTag {
+  @include mono-tag;
+  color: $color-muted;
+  font-size: 0.72rem;
+  border: 1px solid rgba(242, 240, 233, 0.08);
+  padding: 0.35rem 0.75rem;
+  border-radius: $radius-full;
+  background: rgba(242, 240, 233, 0.02);
+}
+
+.heroTitle {
+  font-size: clamp(2.75rem, 5.2vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+  color: $color-light;
+}
+
+.titleLine {
+  display: block;
+}
+
+.titleLineHighlight {
+  display: block;
+  
+  em {
+    font-style: normal;
+    @include text-gradient-dual($color-accent, $color-mint);
+  }
+}
+
+.heroDescription {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: $color-light-dim;
+  max-width: 620px;
+  margin-bottom: 2.25rem;
+
+  strong {
+    color: $color-light;
+    font-weight: 600;
+  }
+
+  @include mobile {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+
+  @include mobile {
+    margin-bottom: 2rem;
+    gap: 0.75rem;
+
+    a {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+// Metrics Ribbon
+.metricsRibbon {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: $radius-lg;
+  background: rgba(22, 24, 27, 0.7);
+  border: 1px solid $color-border;
+  backdrop-filter: blur(12px);
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @include mobile {
+    padding: 1.25rem;
+  }
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricValue {
+  font-family: $font-headline;
+  font-size: 1.95rem;
+  font-weight: 800;
+  color: $color-accent;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.metricLabel {
+  font-family: $font-headline;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: $color-light;
+  margin-bottom: 0.15rem;
+}
+
+.metricSub {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  color: $color-muted;
+  line-height: 1.3;
+}
+
+// Right Column: Framed Card
+.heroVisual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.visualCard {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  background: $color-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  padding: 1.25rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  transition: all $transition-smooth;
+
+  &:hover {
+    border-color: $color-border-hover;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(166, 184, 255, 0.15);
+  }
+}
+
+// Corner Crosshairs
+.crosshair {
+  position: absolute;
+  font-family: $font-mono;
+  font-size: 1.1rem;
+  color: $color-accent;
+  opacity: 0.6;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.crosshairTL { top: -8px; left: -6px; }
+.crosshairTR { top: -8px; right: -6px; }
+.crosshairBL { bottom: -8px; left: -6px; }
+.crosshairBR { bottom: -8px; right: -6px; }
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(242, 240, 233, 0.06);
+}
+
+.cardHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminalIcon {
+  color: $color-accent;
+  display: flex;
+}
+
+.coordinates {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  color: $color-muted;
+  letter-spacing: 0.05em;
+}
+
+.badgeGov {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: $color-mint;
+  background: $color-mint-dim;
+  padding: 0.25rem 0.6rem;
+  border-radius: $radius-full;
+  border: 1px solid rgba(183, 247, 212, 0.25);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $color-surface-2;
+  border: 1px solid rgba(242, 240, 233, 0.08);
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center top;
+  transition: transform $transition-smooth;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.imageOverlayGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(17, 19, 21, 0.4) 75%,
+    rgba(17, 19, 21, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+.floatingRoleTag {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  @include glass(rgba(17, 19, 21, 0.85), 14px, rgba(183, 247, 212, 0.3));
+  border-radius: $radius-md;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.roleTagIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-sm;
+  background: $color-mint-dim;
+  color: $color-mint;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.roleTagTitle {
+  font-family: $font-headline;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: $color-light;
+  line-height: 1.2;
+}
+
+.roleTagSubtitle {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  color: $color-mint;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(242, 240, 233, 0.06);
+}
+
+.techChip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  color: $color-muted;
+  background: rgba(242, 240, 233, 0.04);
+  padding: 0.35rem 0.65rem;
+  border-radius: $radius-sm;
+  border: 1px solid rgba(242, 240, 233, 0.05);
+
+  svg {
+    color: $color-accent;
+  }
+}
+
+.visualGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(166, 184, 255, 0.12) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+// Scroll Indicator
+.scrollIndicator {
+  margin-top: 4.5rem;
+  display: flex;
+  justify-content: center;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity $transition-base;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  @include mobile {
+    margin-top: 2.5rem;
+  }
+}
+
+.scrollText {
+  @include mono-tag;
+  font-size: 0.7rem;
+  color: $color-muted;
+  letter-spacing: 0.12em;
+}
+
+.scrollIconWrapper {
+  width: 22px;
+  height: 36px;
+  border-radius: $radius-full;
+  border: 2px solid rgba(242, 240, 233, 0.2);
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scrollDot {
+  width: 4px;
+  height: 8px;
+  border-radius: $radius-full;
+  background: $color-accent;
+  animation: floatSlow 2s infinite ease-in-out;
+}

@@ -1,0 +1,291 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+// Left Direct Card
+.directInfoCard {
+  background: $color-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    padding: 1.75rem;
+  }
+}
+
+.availabilityBanner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: $radius-full;
+  background: $color-mint-dim;
+  border: 1px solid rgba(183, 247, 212, 0.2);
+  color: $color-mint;
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  font-weight: 500;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-mint;
+  box-shadow: 0 0 6px $color-mint;
+}
+
+.directTitle {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: $color-light;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+
+  @include mobile {
+    font-size: 1.5rem;
+  }
+}
+
+.directDesc {
+  font-size: 1rem;
+  color: $color-light-dim;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.channelList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.channelItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: $radius-md;
+  background: $color-surface-2;
+  border: 1px solid rgba(242, 240, 233, 0.05);
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $color-border-hover;
+  }
+}
+
+.channelIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-sm;
+  background: $color-accent-dim;
+  color: $color-accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channelDetails {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.channelLabel {
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  color: $color-muted;
+  text-transform: uppercase;
+}
+
+.channelValue {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $color-light;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.channelValueStatic {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $color-light;
+}
+
+.copyBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: $radius-sm;
+  background: $color-surface-1;
+  border: 1px solid $color-border;
+  color: $color-muted;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all $transition-fast;
+
+  &:hover {
+    color: $color-accent;
+    border-color: $color-accent;
+  }
+}
+
+.checkIcon {
+  color: $color-mint;
+}
+
+.quickActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+// Right Form Card
+.formCard {
+  background: $color-surface-1;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    padding: 1.75rem;
+  }
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $color-light;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.formSubtitle {
+  font-size: 0.9rem;
+  color: $color-muted;
+  margin-bottom: 2rem;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.inputLabel {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  color: $color-light-dim;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.requiredStar {
+  color: $color-accent;
+}
+
+.textInput,
+.textArea {
+  background: $color-surface-2;
+  border: 1px solid rgba(242, 240, 233, 0.08);
+  border-radius: $radius-md;
+  padding: 0.85rem 1rem;
+  color: $color-light;
+  font-size: 0.95rem;
+  transition: all $transition-fast;
+
+  &::placeholder {
+    color: $color-muted-dark;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-accent;
+    box-shadow: 0 0 15px rgba(166, 184, 255, 0.15);
+    background: $color-surface-3;
+  }
+}
+
+.textArea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+// Success State
+.successState {
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: auto 0;
+}
+
+.successIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: $color-mint-dim;
+  border: 2px solid $color-mint;
+  color: $color-mint;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.successTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: $color-light;
+  margin-bottom: 0.75rem;
+}
+
+.successText {
+  font-size: 0.95rem;
+  color: $color-light-dim;
+  max-width: 420px;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+
+  strong {
+    color: $color-accent;
+  }
+}
