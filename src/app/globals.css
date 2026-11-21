@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #111315;
+    color: #F2F0E9;
+    font-family: var(--font-inter), sans-serif;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #A6B8FF;
+    color: #111315;
+  }
+}
+
+@layer utilities {
+  .glass-surface {
+    background: rgba(22, 24, 27, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(242, 240, 233, 0.08);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #F2F0E9 0%, #A6B8FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-dual {
+    background: linear-gradient(90deg, #A6B8FF 0%, #B7F7D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #111315;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #23282F;
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #85878B;
+  }
+}

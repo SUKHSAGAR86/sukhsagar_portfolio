@@ -1,29 +1,7 @@
-import { Space_Grotesk, Inter, DM_Mono } from 'next/font/google';
-import '@/styles/globals.scss';
+import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollProgress from '@/components/ui/ScrollProgress';
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-  display: 'swap',
-  weight: ['500', '600', '700'],
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-  weight: ['400', '500', '600', '700'],
-});
-
-const dmMono = DM_Mono({
-  subsets: ['latin'],
-  variable: '--font-dm-mono',
-  display: 'swap',
-  weight: ['400', '500'],
-});
 
 export const metadata = {
   metadataBase: new URL('https://sukhsagar-portfolio.vercel.app'),
@@ -84,17 +62,33 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${dmMono.variable}`}>
-      <body>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="bg-dark text-light font-body antialiased selection:bg-accent selection:text-dark min-h-screen relative overflow-x-hidden">
         {/* Top Scroll Indicator */}
         <ScrollProgress />
 
         {/* Global Atmospheric Background */}
-        <div className="atmospheric-bg" aria-hidden="true">
-          <div className="atmospheric-bg__glow-1" />
-          <div className="atmospheric-bg__glow-2" />
-          <div className="atmospheric-bg__glow-3" />
-          <div className="atmospheric-bg__grid" />
+        <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
+          <div className="absolute -top-[150px] -right-[100px] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(166,184,255,0.08)_0%,transparent_70%)] blur-[80px] rounded-full" />
+          <div className="absolute top-[40%] -left-[200px] w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(183,247,212,0.05)_0%,transparent_70%)] blur-[100px] rounded-full" />
+          <div className="absolute -bottom-[100px] right-[15%] w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(166,184,255,0.06)_0%,transparent_70%)] blur-[90px] rounded-full" />
+          <div 
+            className="absolute inset-0 opacity-40" 
+            style={{
+              backgroundImage: 'linear-gradient(to right, rgba(242, 240, 233, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(242, 240, 233, 0.02) 1px, transparent 1px)',
+              backgroundSize: '64px 64px',
+              maskImage: 'radial-gradient(ellipse at 50% 50%, black 40%, transparent 80%)',
+              WebkitMaskImage: 'radial-gradient(ellipse at 50% 50%, black 40%, transparent 80%)'
+            }}
+          />
         </div>
 
         {/* Navigation */}

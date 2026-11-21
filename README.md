@@ -1,7 +1,7 @@
 # Sukhsagar Jangde — Personal Developer Portfolio
 
 > **Digital Craft × Creative Engineering**  
-> Production-grade personal developer portfolio built with **Next.js, TypeScript, and SCSS**.
+> Production-grade personal developer portfolio built with **Next.js and Tailwind CSS**.
 
 ---
 
@@ -10,7 +10,7 @@
 **Sukhsagar Jangde** is a Software Developer and Full-Stack Engineer with **2+ years of professional engineering experience** working within the **National Informatics Centre (NIC) and Ministry of Electronics & IT (MeitY) vendor ecosystem**.
 
 Specialized in:
-- **Frontend Architecture:** React.js, Next.js, SCSS / Sass (Modular Architecture), JavaScript (ES6+), Accessible UI.
+- **Frontend Architecture:** React.js, Next.js, Tailwind CSS, JavaScript (ES6+), Accessible UI.
 - **Backend & APIs:** Node.js, Express.js, RESTful APIs, JWT, SHA-256 Hashing, Role-Based Access Control (RBAC).
 - **Relational Databases:** Microsoft SQL Server (MSSQL), MySQL, PostgreSQL, MongoDB.
 
@@ -42,7 +42,7 @@ Specialized in:
   - Headlines: *Space Grotesk*
   - Body: *Inter*
   - Technical / Metadata: *DM Mono*
-- **Styling:** Modular SCSS (BEM, Variables, Mixins, Glassmorphism, Responsive Breakpoints).
+- **Styling:** Tailwind CSS (Custom Color Palette, Glassmorphism, Responsive Breakpoints, Custom Animations).
 
 ---
 
