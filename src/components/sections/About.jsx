@@ -1,89 +1,301 @@
+// 'use client';
+
+// import React from 'react';
+// import Image from 'next/image';
+// import { personalInfo } from '@/data/portfolioData';
+// import { Shield, Cpu, Layers, CheckCircle2, Award, Terminal, ArrowUpRight } from 'lucide-react';
+// import styles from './About.module.scss';
+
+// export default function About() {
+//   const engineeringPrinciples = [
+//     {
+//       icon: <Shield size={24} />,
+//       title: 'Security-First Architecture',
+//       desc: 'Government and judicial applications demand uncompromised data integrity. I implement SHA-256 encryption, strict Role-Based Access Control (RBAC), and sanitization pipelines.',
+//       tag: 'SECURITY & RBAC',
+//     },
+//     {
+//       icon: <Layers size={24} />,
+//       title: 'Relational Database Precision',
+//       desc: 'Specialized in MSSQL, MySQL, and PostgreSQL with normalized schemas, stored procedures, and indexing optimized for high-concurrency public records.',
+//       tag: 'MSSQL / MYSQL / POSTGRES',
+//     },
+//     {
+//       icon: <Cpu size={24} />,
+//       title: 'High-Throughput React & Next.js',
+//       desc: 'Crafting responsive, clean-architecture user interfaces that load instantly across low-bandwidth environments with strict adherence to judicial usability standards.',
+//       tag: 'REACT.JS / NEXT.JS',
+//     },
+//     {
+//       icon: <CheckCircle2 size={24} />,
+//       title: 'Production-Tested Delivery',
+//       desc: '8+ full-stack systems built, with 4+ actively deployed in live production environments handling state advertisements, court proceedings, and departmental media.',
+//       tag: '4+ LIVE DEPLOYMENTS',
+//     },
+//   ];
+
+//   return (
+//     <section className="section" id="about">
+//       <div className="container">
+//         {/* Section Header */}
+//         <div className="section-header">
+//           <div className="eyebrow">
+//             <span>01 // DIGITAL CRAFT × CREATIVE ENGINEERING</span>
+//           </div>
+//           <h2 className="section-header__title">
+//             Engineering Systems That <br />
+//             Operate Where It Matters.
+//           </h2>
+//           <p className="section-header__desc">
+//             Bridging technical depth, rigorous database architecture, and polished frontend craft for public infrastructure and modern web software.
+//           </p>
+//         </div>
+
+//         {/* Narrative & Bio Grid */}
+//         <div className={styles.aboutStoryGrid}>
+//           <div className={styles.storyCard}>
+//             <h3 className={styles.storyHeading}>
+//               From Academic Grounding to the Frontlines of Public Digital Infrastructure.
+//             </h3>
+            
+//             <p className={styles.storyParagraph}>
+//               I am a Software Developer and Full-Stack Engineer based in <strong>Raipur, Chhattisgarh</strong>. Having completed my <strong>Master of Computer Applications (MCA)</strong> from Pt. Ravishankar Shukla University, I transitioned straight into high-stakes development within the <strong>National Informatics Centre (NIC) and MeitY ecosystem</strong>.
+//             </p>
+
+//             <p className={styles.storyParagraph}>
+//               My engineering journey is defined by real-world responsibility. Whether optimizing the <strong>Case Information System (CIS Periphery)</strong> for the High Court of Chhattisgarh or engineering the end-to-end <strong>Advertisement Management System</strong> for Chhattisgarh Samvad, I build software that processes public records, financial disbursements, and judicial causelists with absolute accuracy.
+//             </p>
+
+//             <div className={styles.storyHighlights}>
+//               <div className={styles.highlightBadge}>
+//                 <Award size={18} />
+//                 <span>NIC / MeitY Vendor Ecosystem</span>
+//               </div>
+//               <div className={styles.highlightBadge}>
+//                 <Terminal size={18} />
+//                 <span>MERN &amp; Relational Stack</span>
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* Side Portrait Card */}
+//           <div className={styles.portraitCard}>
+//             <div className={styles.portraitWrapper}>
+//               <Image
+//                 src={personalInfo.portraitImage}
+//                 alt="Sukhsagar Jangde professional portrait"
+//                 fill
+//                 sizes="(max-width: 768px) 100vw, 400px"
+//                 className={styles.portraitImg}
+//               />
+//               <div className={styles.portraitOverlay}></div>
+//             </div>
+
+//             <div className={styles.portraitDetails}>
+//               <div className={styles.portraitName}>{personalInfo.name}</div>
+//               <div className={styles.portraitLoc}>Raipur, Chhattisgarh, India</div>
+//               <div className={styles.portraitEdu}>MCA, Pt. Ravishankar Shukla University</div>
+              
+//               <a
+//                 href={personalInfo.linkedin}
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className={styles.linkedinLink}
+//               >
+//                 <span>View LinkedIn Verification</span>
+//                 <ArrowUpRight size={14} />
+//               </a>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* 4 Pillars Grid */}
+//         <div className={styles.pillarsGrid}>
+//           {engineeringPrinciples.map((item, idx) => (
+//             <div key={idx} className={styles.pillarCard}>
+//               <div className={styles.pillarIconWrapper}>{item.icon}</div>
+//               <div className={styles.pillarTag}>{item.tag}</div>
+//               <h4 className={styles.pillarTitle}>{item.title}</h4>
+//               <p className={styles.pillarDesc}>{item.desc}</p>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* Engineering Philosophy Quote */}
+//         <div className={styles.philosophyBanner}>
+//           <div className={styles.quoteMark}>&ldquo;</div>
+//           <p className={styles.philosophyQuote}>
+//             {personalInfo.bio.quote}
+//           </p>
+//           <div className={styles.philosophyAuthor}>
+//             — Sukhsagar Jangde, Software Developer
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
+// ===============================================
 'use client';
 
 import React from 'react';
 import Image from 'next/image';
 import { personalInfo } from '@/data/portfolioData';
-import { Shield, Cpu, Layers, CheckCircle2, Award, Terminal, ArrowUpRight } from 'lucide-react';
+import {
+  Shield,
+  Database,
+  Layers,
+  CheckCircle2,
+  Award,
+  Terminal,
+  ArrowUpRight,
+  Briefcase,
+  GraduationCap,
+} from 'lucide-react';
 import styles from './About.module.scss';
 
-export default function About() {
-  const engineeringPrinciples = [
-    {
-      icon: <Shield size={24} />,
-      title: 'Security-First Architecture',
-      desc: 'Government and judicial applications demand uncompromised data integrity. I implement SHA-256 encryption, strict Role-Based Access Control (RBAC), and sanitization pipelines.',
-      tag: 'SECURITY & RBAC',
-    },
-    {
-      icon: <Layers size={24} />,
-      title: 'Relational Database Precision',
-      desc: 'Specialized in MSSQL, MySQL, and PostgreSQL with normalized schemas, stored procedures, and indexing optimized for high-concurrency public records.',
-      tag: 'MSSQL / MYSQL / POSTGRES',
-    },
-    {
-      icon: <Cpu size={24} />,
-      title: 'High-Throughput React & Next.js',
-      desc: 'Crafting responsive, clean-architecture user interfaces that load instantly across low-bandwidth environments with strict adherence to judicial usability standards.',
-      tag: 'REACT.JS / NEXT.JS',
-    },
-    {
-      icon: <CheckCircle2 size={24} />,
-      title: 'Production-Tested Delivery',
-      desc: '8+ full-stack systems built, with 4+ actively deployed in live production environments handling state advertisements, court proceedings, and departmental media.',
-      tag: '4+ LIVE DEPLOYMENTS',
-    },
-  ];
+const corePillars = [
+  {
+    icon: <Shield size={24} />,
+    title: 'Secure by Design',
+    desc: 'Government and judicial applications need dependable data handling. I build with JWT authentication, SHA-256 password hashing and role-based access control (RBAC) from the first line of code.',
+    tag: 'JWT · SHA-256 · RBAC',
+  },
+  {
+    icon: <Database size={24} />,
+    title: 'Reliable Data Layer',
+    desc: 'I design REST APIs on Node.js and Express backed by MSSQL, MySQL, PostgreSQL and MongoDB, with clean schemas for records such as advertisements, bills and approvals.',
+    tag: 'MSSQL · MySQL · PostgreSQL · MongoDB',
+  },
+  {
+    icon: <Layers size={24} />,
+    title: 'Responsive Front-End',
+    desc: 'I build clear, responsive interfaces with React.js and Next.js, styled with Bootstrap, Tailwind CSS, SASS and Material UI, so officers and citizens can use them on any device.',
+    tag: 'React.js · Next.js',
+  },
+  {
+    icon: <CheckCircle2 size={24} />,
+    title: 'Delivered to Production',
+    desc: 'I have built 8+ full-stack projects, 4+ of them live, covering court systems, state advertisement workflows and a departmental media portal.',
+    tag: '8+ projects · 4+ live',
+  },
+];
 
+const experience = [
+  {
+    role: 'Software Developer',
+    org: 'Pioneer e Solutions Pvt Ltd',
+    place: 'High Court of Chhattisgarh, Bilaspur (NIC)',
+    period: 'Apr 2026 – Jul 2026',
+    points: [
+      'Worked on the Case Information System (CIS Periphery) front end using React.js, JavaScript, HTML, CSS and Bootstrap.',
+      'Built and enhanced responsive user interfaces based on project requirements.',
+    ],
+  },
+  {
+    role: 'Software Engineer',
+    org: 'NetProphets Cyberworks Pvt Ltd',
+    place: 'Department of Public Relations, Govt. of Chhattisgarh (NIC)',
+    period: 'Jan 2025 – Mar 2026',
+    points: [
+      'Built the Advertisement Management System for Chhattisgarh Samvad, with client and admin modules covering ad requests, approvals, publisher allocation and bill verification.',
+      'Developed the department web portal with a secure admin dashboard, REST APIs and MSSQL.',
+      'Created a role-based Task Management System for admins and employees.',
+    ],
+  },
+  {
+    role: 'Full Stack Web Developer (Intern)',
+    org: 'Adyant SoftTech',
+    place: 'Raipur, Chhattisgarh',
+    period: 'Feb 2024 – Aug 2024',
+    points: [
+      'Built a Real Property web application with React.js, where users list properties and admins manage them.',
+    ],
+  },
+];
+
+const education = [
+  {
+    title: 'Master of Computer Applications (MCA)',
+    place: 'Pt. Ravishankar Shukla University, Raipur',
+    period: '2022 – 2024',
+  },
+  {
+    title: 'Bachelor of Computer Applications (BCA)',
+    place: 'Dr. J. P. Mishra Govt. PG Science College, Mungeli (ABVV Bilaspur)',
+    period: '2019 – 2022',
+  },
+];
+
+export default function About() {
   return (
     <section className="section" id="about">
       <div className="container">
         {/* Section Header */}
         <div className="section-header">
           <div className="eyebrow">
-            <span>01 // DIGITAL CRAFT × CREATIVE ENGINEERING</span>
+            <span>About Me</span>
           </div>
           <h2 className="section-header__title">
-            Engineering Systems That <br />
-            Operate Where It Matters.
+            Full-Stack Developer Building <br />
+            Software for Public Services.
           </h2>
           <p className="section-header__desc">
-            Bridging technical depth, rigorous database architecture, and polished frontend craft for public infrastructure and modern web software.
+            Over 2 years of experience building secure, data-driven web applications for NIC and
+            MeitY government projects in Chhattisgarh.
           </p>
         </div>
 
-        {/* Narrative & Bio Grid */}
+        {/* Bio + Portrait */}
         <div className={styles.aboutStoryGrid}>
           <div className={styles.storyCard}>
             <h3 className={styles.storyHeading}>
-              From Academic Grounding to the Frontlines of Public Digital Infrastructure.
+              From MCA graduate to building systems the courts and government rely on.
             </h3>
-            
+
             <p className={styles.storyParagraph}>
-              I am a Software Developer and Full-Stack Engineer based in <strong>Raipur, Chhattisgarh</strong>. Having completed my <strong>Master of Computer Applications (MCA)</strong> from Pt. Ravishankar Shukla University, I transitioned straight into high-stakes development within the <strong>National Informatics Centre (NIC) and MeitY ecosystem</strong>.
+              I am a <strong>MERN stack developer</strong> based in{' '}
+              <strong>Raipur, Chhattisgarh</strong>, with a{' '}
+              <strong>Master of Computer Applications (MCA)</strong> from Pt. Ravishankar Shukla
+              University. I started with a full-stack internship in 2024 and have since worked on
+              government projects under <strong>NIC (MeitY)</strong>.
             </p>
 
             <p className={styles.storyParagraph}>
-              My engineering journey is defined by real-world responsibility. Whether optimizing the <strong>Case Information System (CIS Periphery)</strong> for the High Court of Chhattisgarh or engineering the end-to-end <strong>Advertisement Management System</strong> for Chhattisgarh Samvad, I build software that processes public records, financial disbursements, and judicial causelists with absolute accuracy.
+              I have worked on the <strong>Case Information System (CIS Periphery)</strong> for the
+              High Court of Chhattisgarh, Bilaspur, and built the end-to-end{' '}
+              <strong>Advertisement Management System</strong> for Chhattisgarh Samvad. That system
+              handles ad requests, officer approvals, publisher allocation and bill verification
+              across print, electronic, hoarding and display media.
+            </p>
+
+            <p className={styles.storyParagraph}>
+              I enjoy turning complex, paper-heavy workflows into clear digital tools, and I care
+              about clean code, secure access and interfaces that are easy to use.
             </p>
 
             <div className={styles.storyHighlights}>
               <div className={styles.highlightBadge}>
                 <Award size={18} />
-                <span>NIC / MeitY Vendor Ecosystem</span>
+                <span>NIC / MeitY Projects</span>
               </div>
               <div className={styles.highlightBadge}>
                 <Terminal size={18} />
-                <span>MERN &amp; Relational Stack</span>
+                <span>MERN &amp; SQL Stack</span>
               </div>
             </div>
           </div>
 
-          {/* Side Portrait Card */}
+          {/* Portrait Card */}
           <div className={styles.portraitCard}>
             <div className={styles.portraitWrapper}>
               <Image
                 src={personalInfo.portraitImage}
-                alt="Sukhsagar Jangde professional portrait"
+                alt="Sukhsagar Jangde, Software Developer"
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 className={styles.portraitImg}
@@ -95,24 +307,24 @@ export default function About() {
               <div className={styles.portraitName}>{personalInfo.name}</div>
               <div className={styles.portraitLoc}>Raipur, Chhattisgarh, India</div>
               <div className={styles.portraitEdu}>MCA, Pt. Ravishankar Shukla University</div>
-              
+
               <a
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.linkedinLink}
               >
-                <span>View LinkedIn Verification</span>
+                <span>View LinkedIn Profile</span>
                 <ArrowUpRight size={14} />
               </a>
             </div>
           </div>
         </div>
 
-        {/* 4 Pillars Grid */}
+        {/* Core Strengths */}
         <div className={styles.pillarsGrid}>
-          {engineeringPrinciples.map((item, idx) => (
-            <div key={idx} className={styles.pillarCard}>
+          {corePillars.map((item) => (
+            <div key={item.title} className={styles.pillarCard}>
               <div className={styles.pillarIconWrapper}>{item.icon}</div>
               <div className={styles.pillarTag}>{item.tag}</div>
               <h4 className={styles.pillarTitle}>{item.title}</h4>
@@ -121,15 +333,55 @@ export default function About() {
           ))}
         </div>
 
-        {/* Engineering Philosophy Quote */}
+        {/* Experience & Education */}
+        <div className={styles.journeyGrid}>
+          <div className={styles.journeyColumn}>
+            <h3 className={styles.journeyTitle}>
+              <Briefcase size={20} />
+              <span>Experience</span>
+            </h3>
+
+            <div className={styles.timeline}>
+              {experience.map((job) => (
+                <div key={`${job.org}-${job.period}`} className={styles.timelineItem}>
+                  <div className={styles.timelinePeriod}>{job.period}</div>
+                  <h4 className={styles.timelineRole}>{job.role}</h4>
+                  <div className={styles.timelineOrg}>
+                    {job.org} — {job.place}
+                  </div>
+                  <ul className={styles.timelineList}>
+                    {job.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.journeyColumn}>
+            <h3 className={styles.journeyTitle}>
+              <GraduationCap size={20} />
+              <span>Education</span>
+            </h3>
+
+            <div className={styles.timeline}>
+              {education.map((edu) => (
+                <div key={edu.title} className={styles.timelineItem}>
+                  <div className={styles.timelinePeriod}>{edu.period}</div>
+                  <h4 className={styles.timelineRole}>{edu.title}</h4>
+                  <div className={styles.timelineOrg}>{edu.place}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Philosophy Quote */}
         <div className={styles.philosophyBanner}>
           <div className={styles.quoteMark}>&ldquo;</div>
-          <p className={styles.philosophyQuote}>
-            {personalInfo.bio.quote}
-          </p>
-          <div className={styles.philosophyAuthor}>
-            — Sukhsagar Jangde, Software Developer
-          </div>
+          <p className={styles.philosophyQuote}>{personalInfo.bio.quote}</p>
+          <div className={styles.philosophyAuthor}>— Sukhsagar Jangde, Software Developer</div>
         </div>
       </div>
     </section>
